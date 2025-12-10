@@ -1,108 +1,68 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './Skills.css';
 
 const Skills = () => {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-    const skillCategories = [
-        {
-            title: 'API & Integrations',
-            skills: ['REST APIs', 'Webhooks', 'JSON', 'HTTP', 'OAuth2', 'HMAC', 'Payload Review'],
-            icon: '🔌',
-        },
-        {
-            title: 'Payments',
-            skills: ['Checkout', 'Auth/Capture/Refund', '3DS/SCA', 'Tokenization', 'Idempotency', 'Reconciliation'],
-            icon: '💳',
-        },
-        {
-            title: 'Languages & Tools',
-            skills: ['Python', 'Java', 'Node.js/TS', 'Git', 'Postman', 'CloudWatch', 'Log/Trace Debugging'],
-            icon: '💻',
-        },
-        {
-            title: 'Cloud/DevOps',
-            skills: ['AWS Lambda', 'API Gateway', 'ECS', 'Docker', 'Kubernetes', 'GitLab CI', 'Jenkins'],
-            icon: '☁️',
-        },
-        {
-            title: 'Solutioning',
-            skills: ['Pre-sales Discovery', 'Integration Architecture', 'POCs', 'Docs', 'Playbooks'],
-            icon: '🎯',
-        },
-    ];
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: 'easeOut' },
-        },
-    };
-
     return (
-        <section id="skills" className="skills section">
-            <div className="container">
-                <motion.h2
-                    className="section-title"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    Core Skills
-                </motion.h2>
+        <section id="skills" className="skills-section section">
+            <div className="newspaper-container">
+                {/* Section Header */}
+                <div className="section-header">
+                    <h2>TECHNICAL SPECIFICATIONS</h2>
+                </div>
 
-                <motion.div
-                    ref={ref}
-                    className="skills-grid"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? 'visible' : 'hidden'}
-                >
-                    {skillCategories.map((category, index) => (
-                        <motion.div
-                            key={index}
-                            className="skill-card glass"
-                            variants={cardVariants}
-                            whileHover={{
-                                y: -10,
-                                scale: 1.02,
-                                transition: { duration: 0.3 },
-                            }}
-                        >
-                            <div className="skill-icon">{category.icon}</div>
-                            <h3 className="skill-title">{category.title}</h3>
-                            <div className="skill-list">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <motion.span
-                                        key={skillIndex}
-                                        className="skill-tag"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={inView ? { opacity: 1, scale: 1 } : {}}
-                                        transition={{ delay: 0.5 + skillIndex * 0.05, duration: 0.3 }}
-                                    >
-                                        {skill}
-                                    </motion.span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                {/* Skills Categories */}
+                <div className="skills-content">
+                    {/* AI & Machine Learning */}
+                    <div className="skill-category">
+                        <h3 className="category-title">AI & MACHINE LEARNING</h3>
+                        <hr className="category-rule" />
+                        <p className="skill-list">
+                            Large Language Models (LLMs) • Generative AI • Natural Language Processing • Computer Vision • RAG Pipelines • Prompt Engineering • Fine-tuning • Embeddings • PyTorch • TensorFlow • Hugging Face Transformers • LangChain • LlamaIndex • Scikit-learn
+                        </p>
+                    </div>
+
+                    {/* Programming & Frameworks */}
+                    <div className="skill-category">
+                        <h3 className="category-title">PROGRAMMING & FRAMEWORKS</h3>
+                        <hr className="category-rule" />
+                        <p className="skill-list">
+                            Python • Django • Flask • Java • Node.js • TypeScript • REST APIs • Microservices Architecture • GraphQL • FastAPI
+                        </p>
+                    </div>
+
+                    {/* Cloud & DevOps */}
+                    <div className="skill-category">
+                        <h3 className="category-title">CLOUD & DEVOPS</h3>
+                        <hr className="category-rule" />
+                        <p className="skill-list">
+                            Amazon Web Services (AWS) • Google Cloud Platform (GCP) • Microsoft Azure • Docker • Kubernetes • Lambda • Elastic Container Service • CI/CD Pipelines • MLOps • AI Ops • Jenkins • GitHub Actions
+                        </p>
+                    </div>
+
+                    {/* Data Systems */}
+                    <div className="skill-category">
+                        <h3 className="category-title">DATA SYSTEMS</h3>
+                        <hr className="category-rule" />
+                        <p className="skill-list">
+                            SQL • PostgreSQL • MySQL • Redis • MongoDB • NoSQL • Vector Databases (Pinecone, Qdrant, Weaviate, FAISS) • Elasticsearch
+                        </p>
+                    </div>
+
+                    {/* Tools & Methodologies */}
+                    <div className="skill-category">
+                        <h3 className="category-title">TOOLS & METHODOLOGIES</h3>
+                        <hr className="category-rule" />
+                        <p className="skill-list">
+                            Git • Agile Development • Test-Driven Development • System Design • API Design • Performance Optimization • Debugging • Technical Documentation
+                        </p>
+                    </div>
+                </div>
+
+                {/* Expertise Note */}
+                <div className="skills-note">
+                    <p className="metadata">
+                        All listed technologies represent production-level experience gained through professional software development and AI engineering work.
+                    </p>
+                </div>
             </div>
         </section>
     );

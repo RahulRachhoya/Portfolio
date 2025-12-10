@@ -1,129 +1,224 @@
-.projects {
-    padding: var(--spacing-xl) 0;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROJECTS SECTION - FEATURE ARTICLES
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.projects-section {
+    background-color: var(--color-newsprint);
+    padding: var(--space-xxl) 0;
 }
 
-.project-card {
-    max-width: 900px;
-    margin: var(--spacing-lg) auto 0;
-    padding: var(--spacing-md);
-    animation: float 7s ease-in-out infinite;
+/* Project Article */
+.project-article {
+    margin-bottom: var(--space-xxl);
 }
 
-.project-header {
-    margin-bottom: 1.5rem;
+.article-header {
+    margin-bottom: var(--space-lg);
 }
 
-.project-title {
-    color: var(--color-accent);
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+.article-headline {
+    font-family: var(--font-headline);
+    font-size: var(--size-headline-medium);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
 }
 
-.project-period {
-    color: var(--color-highlight);
-    font-weight: 600;
-    font-size: 0.95rem;
+.headline-underline {
+    width: 80px;
+    height: 2px;
+    background-color: var(--color-border-dark);
+    margin: var(--space-sm) 0;
 }
 
-.project-description {
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-    font-size: 1.1rem;
+.article-deck {
+    font-family: var(--font-body);
+    font-size: var(--size-subheading);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
 }
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+.article-byline {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--border-light);
 }
 
-.tech-tag {
-    background: rgba(255, 107, 107, 0.1);
-    color: var(--color-highlight);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255, 107, 107, 0.3);
-    transition: all var(--transition-fast);
+/* Article Body - Two Column Layout */
+.article-body {
+    margin: var(--space-lg) 0;
 }
 
-.tech-tag:hover {
-    background: rgba(255, 107, 107, 0.2);
-    border-color: var(--color-highlight);
-    transform: translateY(-2px);
+.article-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--column-gutter);
+    position: relative;
 }
 
-.project-details {
-    overflow: hidden;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(100, 255, 218, 0.2);
+/* Column Divider */
+.article-columns::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + (var(--column-gutter) / 2));
+    transform: translateX(-0.5px);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-border-dark);
 }
 
-.details-title {
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+.article-column {
+    position: relative;
 }
 
-.details-list {
+.article-column p {
+    text-align: justify;
+    hyphens: auto;
+    margin-bottom: var(--space-md);
+}
+
+.article-column p strong {
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* Achievement Lists */
+.achievement-list {
     list-style: none;
+    padding-left: 0;
+    margin: var(--space-md) 0;
 }
 
-.details-list li {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    opacity: 0.9;
+.achievement-list li {
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-sm);
+    position: relative;
 }
 
-.bullet {
-    color: var(--color-accent);
-    font-size: 1.2rem;
-    flex-shrink: 0;
+.achievement-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--color-accent-red);
 }
 
-.expand-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 2rem auto 0;
-    padding: 0.875rem 2rem;
-    background: rgba(100, 255, 218, 0.1);
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-normal);
+/* Tech Lists in Boxes */
+.tech-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
-.expand-btn:hover {
-    background: rgba(100, 255, 218, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(100, 255, 218, 0.3);
+.tech-list li {
+    padding: var(--space-xs) 0;
+    border-bottom: var(--border-light);
+    font-size: var(--size-body);
 }
 
-.expand-icon {
-    font-size: 0.8rem;
-    transition: transform var(--transition-fast);
+.tech-list li:last-child {
+    border-bottom: none;
 }
 
+/* Article Footer */
+.article-footer {
+    margin-top: var(--space-xl);
+}
+
+/* Projects Summary Section */
+.projects-summary {
+    margin-top: var(--space-xxl);
+    padding-top: var(--space-xl);
+    border-top: var(--border-double);
+}
+
+.summary-headline {
+    font-family: var(--font-metadata);
+    font-size: var(--size-subheading);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-primary);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--column-gutter);
+}
+
+.summary-item {
+    padding: var(--space-md);
+    border: var(--border-light);
+    background-color: var(--color-newsprint-alt);
+}
+
+.summary-item h4 {
+    font-family: var(--font-headline);
+    font-size: var(--size-subheading);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-primary);
+}
+
+.summary-item p {
+    text-align: left;
+    margin-bottom: var(--space-sm);
+}
+
+.summary-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .project-card {
-        padding: 1.5rem;
+    .projects-section {
+        padding: var(--space-xl) 0;
     }
 
-    .project-title {
-        font-size: 1.5rem;
+    .article-headline {
+        font-size: clamp(20px, 5vw, 28px);
     }
 
-    .project-description {
-        font-size: 1rem;
+    .article-deck {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+
+    .article-columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .article-columns::before {
+        display: none;
+    }
+
+    .article-column p {
+        text-align: left;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
     }
 }

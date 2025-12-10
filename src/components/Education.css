@@ -1,74 +1,101 @@
-.education {
-    padding: var(--spacing-xl) 0;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   EDUCATION SECTION - EDUCATIONAL CREDENTIALS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.education-section {
+    background-color: var(--color-newsprint-alt);
+    padding: var(--space-xxl) 0;
 }
 
-.education-card {
-    max-width: 600px;
-    margin: var(--spacing-lg) auto 0;
-    padding: var(--spacing-lg);
-    text-align: center;
-    animation: float 7s ease-in-out infinite;
-    animation-delay: -2s;
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.education-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
+.education-item {
+    padding: var(--space-xl);
+    border: var(--border-double);
+    background-color: var(--color-newsprint);
 }
 
-.university-name {
-    color: var(--color-accent);
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+.institution-name {
+    font-family: var(--font-headline);
+    font-size: var(--size-headline-medium);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-primary);
+}
+
+.institution-location {
+    font-size: var(--size-body);
+    margin-bottom: var(--space-lg);
 }
 
 .degree-info {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: var(--border-light);
 }
 
-.degree {
-    font-size: 1.25rem;
+.degree-title {
+    font-family: var(--font-body);
+    font-size: var(--size-subheading);
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-primary);
 }
 
-.duration {
-    color: var(--color-highlight);
-    font-weight: 600;
-    font-size: 1rem;
+.degree-details {
+    font-size: var(--size-body);
+    color: var(--color-text-metadata);
 }
 
-.gpa {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(100, 255, 218, 0.1);
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    border: 2px solid var(--color-accent);
+.areas-of-study p {
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    line-height: var(--line-height-relaxed);
+    text-align: left;
+    margin: 0;
 }
 
-.gpa-label {
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.gpa-value {
-    font-size: 1.5rem;
+.areas-of-study p strong {
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-text-primary);
 }
 
+.education-note {
+    max-width: 800px;
+    margin: var(--space-xl) auto 0;
+    padding-top: var(--space-lg);
+    text-align: center;
+}
+
+.education-note p {
+    font-style: italic;
+    margin-top: var(--space-md);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════════ */
+
+/* Mobile */
 @media (max-width: 768px) {
-    .education-card {
-        padding: var(--spacing-md);
+    .education-section {
+        padding: var(--space-xl) 0;
     }
 
-    .university-name {
-        font-size: 1.5rem;
+    .education-item {
+        padding: var(--space-md);
     }
 
-    .degree {
-        font-size: 1.1rem;
+    .institution-name {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .degree-title {
+        font-size: clamp(16px, 4vw, 20px);
     }
 }

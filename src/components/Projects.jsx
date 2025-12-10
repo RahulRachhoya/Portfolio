@@ -1,99 +1,149 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './Projects.css';
 
 const Projects = () => {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-    const [expanded, setExpanded] = useState(false);
-
-    const projectDetails = [
-        'Automated end-to-end payment flows (checkout → auth → capture → refund) using Selenium and Pytest',
-        'Validated webhook delivery, retry logic, and idempotency for payment events',
-        'Built API test suites for Stripe, Razorpay, and PayU integrations',
-        'Implemented test data management for multi-currency and multi-gateway scenarios',
-        'Integrated tests into CI/CD pipelines (GitLab CI, Jenkins) for continuous validation',
-        'Created comprehensive test reports with Allure and custom dashboards',
-        'Performed security testing for PCI-DSS compliance and tokenization flows',
-    ];
-
     return (
-        <section id="projects" className="projects section">
-            <div className="container">
-                <motion.h2
-                    className="section-title"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    Featured Projects
-                </motion.h2>
+        <section id="projects" className="projects-section section">
+            <div className="newspaper-container">
+                {/* Section Header */}
+                <div className="section-header">
+                    <h2>TECHNICAL INNOVATIONS</h2>
+                </div>
 
-                <motion.div
-                    ref={ref}
-                    className="project-card glass-strong"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                >
-                    <div className="project-header">
-                        <h3 className="project-title">Payment Flow Validation & E-Commerce Automation</h3>
-                        <p className="project-period">2023 – 2024</p>
+                {/* Project 1: AI-Powered Contextual Knowledge Engine */}
+                <article className="project-article">
+                    <div className="article-header">
+                        <div className="kicker">ARTIFICIAL INTELLIGENCE</div>
+                        <h1 className="article-headline">
+                            AI-POWERED CONTEXTUAL KNOWLEDGE ENGINE ACHIEVES 85% ACCURACY
+                        </h1>
+                        <div className="headline-underline"></div>
+                        <h2 className="article-deck">
+                            Revolutionary RAG System Transforms Information Retrieval Using Vector Databases
+                        </h2>
+                        <div className="article-byline metadata">
+                            PUNE — 2024
+                        </div>
                     </div>
 
-                    <p className="project-description">
-                        Comprehensive test automation framework for payment gateway integrations,
-                        covering checkout flows, transaction processing, webhook handling, and compliance validation.
-                    </p>
-
-                    <div className="project-tech">
-                        <span className="tech-tag">Python</span>
-                        <span className="tech-tag">Selenium</span>
-                        <span className="tech-tag">Pytest</span>
-                        <span className="tech-tag">REST APIs</span>
-                        <span className="tech-tag">CI/CD</span>
-                        <span className="tech-tag">Payment Gateways</span>
-                    </div>
-
-                    <AnimatePresence>
-                        {expanded && (
-                            <motion.div
-                                className="project-details"
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                <h4 className="details-title">Key Achievements:</h4>
-                                <ul className="details-list">
-                                    {projectDetails.map((detail, index) => (
-                                        <motion.li
-                                            key={index}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: index * 0.1, duration: 0.4 }}
-                                        >
-                                            <span className="bullet">▹</span>
-                                            {detail}
-                                        </motion.li>
-                                    ))}
+                    <div className="article-body">
+                        <div className="article-columns">
+                            <div className="article-column">
+                                <p className="drop-cap">
+                                    A groundbreaking contextual knowledge engine developed in 2024 demonstrates the power of combining Large Language Models with vector-based embedding storage.
+                                </p>
+                                <p>
+                                    The system, built using Python and LangChain, leverages FAISS and orchestration frameworks to create intelligent knowledge retrieval systems that understand domain-specific context with unprecedented accuracy.
+                                </p>
+                                <p>
+                                    <strong>Key Achievements:</strong>
+                                </p>
+                                <ul className="achievement-list">
+                                    <li>85% query accuracy in domain-specific reasoning</li>
+                                    <li>Hierarchical context packs for adaptive content generation</li>
+                                    <li>AWS deployment with Docker containerization</li>
+                                    <li>Scalable architecture for enterprise use</li>
                                 </ul>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                            </div>
 
-                    <button
-                        className="expand-btn"
-                        onClick={() => setExpanded(!expanded)}
-                    >
-                        {expanded ? 'Show Less' : 'Show More'}
-                        <span className="expand-icon">{expanded ? '▲' : '▼'}</span>
-                    </button>
-                </motion.div>
+                            <div className="article-column">
+                                <div className="box">
+                                    <h3>Technical Stack</h3>
+                                    <ul className="tech-list">
+                                        <li>Python</li>
+                                        <li>LangChain</li>
+                                        <li>FAISS Vector Database</li>
+                                        <li>Hugging Face Transformers</li>
+                                        <li>AWS Cloud Services</li>
+                                        <li>Docker</li>
+                                    </ul>
+                                </div>
+
+                                <div className="pull-quote">
+                                    "The hierarchical context packs enable adaptive content generation that transforms how we interact with domain-specific data."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="article-footer">
+                        <hr className="rule-light" />
+                    </div>
+                </article>
+
+                {/* Project 2: AI-Augmented Validation System */}
+                <article className="project-article">
+                    <div className="article-header">
+                        <div className="kicker">BACKEND SYSTEMS</div>
+                        <h1 className="article-headline">
+                            AI-AUGMENTED VALIDATION SYSTEM REDUCES ERRORS BY 60 PERCENT
+                        </h1>
+                        <div className="headline-underline"></div>
+                        <h2 className="article-deck">
+                            LLM-Based Reasoning Revolutionizes Backend System Validation
+                        </h2>
+                        <div className="article-byline metadata">
+                            2023-2024
+                        </div>
+                    </div>
+
+                    <div className="article-body">
+                        <div className="article-columns">
+                            <div className="article-column">
+                                <p className="drop-cap">
+                                    An innovative approach to backend validation has achieved remarkable results, cutting validation errors by more than half through intelligent AI integration.
+                                </p>
+                                <p>
+                                    The validation system employs LLM-based reasoning and prompt engineering for API payloads and multi-step workflows, demonstrating how artificial intelligence can enhance traditional software engineering practices.
+                                </p>
+                                <p>
+                                    Implementation on Google Cloud Platform with Kubernetes ensures scalability, while AI Ops practices with CI/CD pipelines guarantee reliability and continuous improvement.
+                                </p>
+                            </div>
+
+                            <div className="article-column">
+                                <div className="box">
+                                    <h3>Impact Metrics</h3>
+                                    <ul className="tech-list">
+                                        <li>60% reduction in validation errors</li>
+                                        <li>40% faster debugging cycles</li>
+                                        <li>Automated documentation generation</li>
+                                        <li>Multi-domain applicability</li>
+                                    </ul>
+                                </div>
+
+                                <p>
+                                    The system's success lies in its ability to understand context and apply reasoning to complex validation scenarios, moving beyond simple rule-based approaches to intelligent decision-making.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="article-footer">
+                        <hr className="rule-light" />
+                    </div>
+                </article>
+
+                {/* Additional Projects Summary */}
+                <div className="projects-summary">
+                    <h3 className="summary-headline">ADDITIONAL TECHNICAL WORK</h3>
+                    <div className="summary-grid">
+                        <div className="summary-item">
+                            <h4>Intelligent Debugging Assistant</h4>
+                            <p className="metadata-small">2023-2024</p>
+                            <p>AI-powered tool for analyzing backend states, logs, and failure patterns using LangChain and Python utilities.</p>
+                        </div>
+                        <div className="summary-item">
+                            <h4>RAG Pipeline Optimization</h4>
+                            <p className="metadata-small">2023-2024</p>
+                            <p>Enhanced system understanding by 40% through advanced retrieval-augmented generation techniques with Pinecone and vector databases.</p>
+                        </div>
+                        <div className="summary-item">
+                            <h4>Model Research & Prototyping</h4>
+                            <p className="metadata-small">ONGOING</p>
+                            <p>Continuous evaluation of state-of-the-art AI models using PyTorch, TensorFlow, and Hugging Face for real-world applications.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

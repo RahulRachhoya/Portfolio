@@ -1,0 +1,49 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE - NEWSPAPER STYLE
+   ═══════════════════════════════════════════════════════════ */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: transparent;
+    border: var(--border-thin);
+    color: var(--color-text-primary);
+    font-family: var(--font-metadata);
+    font-size: var(--size-small);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-hover-bg);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.theme-toggle-text {
+    font-size: var(--size-small);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .theme-toggle-text {
+        display: none;
+    }
+
+    .theme-toggle {
+        padding: var(--space-xs);
+    }
+}

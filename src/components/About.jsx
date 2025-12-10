@@ -1,53 +1,40 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import './About.css';
 
 const About = () => {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
-
     return (
         <section id="about" className="about section">
-            <div className="container">
-                <motion.div
-                    ref={ref}
-                    className="about-card glass-strong"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                >
-                    <motion.h2
-                        className="section-title"
-                        initial={{ opacity: 0 }}
-                        animate={inView ? { opacity: 1 } : {}}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                    >
-                        About Me
-                    </motion.h2>
-
-                    <motion.div
-                        className="about-content"
-                        initial={{ opacity: 0 }}
-                        animate={inView ? { opacity: 1 } : {}}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                    >
-                        <p className="about-text">
-                            <span className="highlight">Solutions Engineer</span> skilled in{' '}
-                            <span className="highlight">REST APIs</span>,{' '}
-                            <span className="highlight">integrations</span>,{' '}
-                            <span className="highlight">Python</span>,{' '}
-                            <span className="highlight">payment workflows</span>, and{' '}
-                            <span className="highlight">distributed backend systems</span>.
-                        </p>
-                        <p className="about-text">
-                            I specialize in building robust API integrations, designing payment solutions,
-                            and creating scalable backend architectures. With a strong foundation in software
-                            testing and automation, I bring a quality-first approach to every project.
-                        </p>
-                    </motion.div>
-                </motion.div>
+            <div className="newspaper-container">
+                <div className="section-header">
+                    <h2>About the Engineer</h2>
+                </div>
+                <div className="about-grid">
+                    <div className="about-main">
+                        <div className="about-photo-wrapper">
+                            <img
+                                src="/assets/profile-photo.jpg"
+                                alt="Rahul Rachhoya"
+                                className="about-photo"
+                            />
+                        </div>
+                        <div className="about-text">
+                            <div className="about-summary">
+                                <p>
+                                    Mr. Rachhoya specializes in building intelligent systems that drive measurable business value. His work bridges the gap between cutting-edge Large Language Models and robust, production-grade software engineering, with a consistent focus on clarity, efficiency, and scalability.
+                                </p>
+                            </div>
+                            <div className="about-role">
+                                <div className="box">
+                                    <h3>Current Position</h3>
+                                    <p className="role-title">Software Engineer – AI & Backend Systems</p>
+                                    <p className="role-company">STL Digital Limited</p>
+                                    <p className="role-detail">
+                                        Leading initiatives in Generative AI and MLOps to optimize production workflows and enhance system reliability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );
