@@ -1,0 +1,74 @@
+.education {
+    padding: var(--spacing-xl) 0;
+}
+
+.education-card {
+    max-width: 600px;
+    margin: var(--spacing-lg) auto 0;
+    padding: var(--spacing-lg);
+    text-align: center;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.education-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.university-name {
+    color: var(--color-accent);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.degree-info {
+    margin-bottom: 1.5rem;
+}
+
+.degree {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.duration {
+    color: var(--color-highlight);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.gpa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(100, 255, 218, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid var(--color-accent);
+}
+
+.gpa-label {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.gpa-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .education-card {
+        padding: var(--spacing-md);
+    }
+
+    .university-name {
+        font-size: 1.5rem;
+    }
+
+    .degree {
+        font-size: 1.1rem;
+    }
+}
