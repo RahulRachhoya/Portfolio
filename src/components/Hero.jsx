@@ -35,6 +35,32 @@ const Hero = () => {
     return (
         <section id="home" className="hero section">
             <div className="hero-container container" ref={ref}>
+                {/* Profile Photo */}
+                <motion.div
+                    className="profile-photo-container"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                >
+                    <motion.div
+                        className="profile-photo-wrapper"
+                        animate={{
+                            y: [0, -15, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                        }}
+                    >
+                        <img
+                            src="/profile.jpg"
+                            alt="Rahul Rachhoya"
+                            className="profile-photo"
+                        />
+                    </motion.div>
+                </motion.div>
+
                 <motion.div
                     className="hero-content"
                     variants={containerVariants}
